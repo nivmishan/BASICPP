@@ -1,0 +1,61 @@
+PRINT "START TEST:\n"     # START TEST
+
+SUB EXPONENT BASE,POWER  # FUNCTION
+  RES=1                  # DECLARE VAIRABLE
+  FOR N=0 TO POWER       # FOR LOOP
+    RES=RES*BASE         # CHANGE VAIRABLE
+  END FOR                # END FOR LOOP
+  RETURN RES             # RETURN VALUE
+END SUB                  # END FUNCTION
+
+FORMAT "2^3 = %", EXPONENT(2,3)
+FORMAT "SHOULD BE 8"
+
+A=5                      # ASSIGNMENT OF A
+B=2                      # ASSIGNMENT OF B
+FORMAT "5^2 = %", EXPONENT(A,B)
+FORMAT "SHOULD BE 25"
+
+ANSWER = (EXPONENT(5,2)-(10%4 + 18/9))*2  # MATH
+FORMAT "Answer to the Ultimate $", "Question of Life,"
+FORMAT "the Universe, and Everything is %", ANSWER
+
+WHILE I<=10              # WHILE LOOP
+  PRINT "% IS ", I
+  IF I%2=0               # IF STATEMENT
+    FORMAT "EVEN"
+  ELSE                   # ELSE STATEMENT
+    FORMAT "NOT EVEN"
+  END IF
+  I=I+1
+END WHILE
+
+FOR A=1 TO 4             # FOR LOOP
+  FOR B=1 TO 4           # NESTED FOR LOOP
+    PRINT "%  ", A*B
+  END FOR
+  PRINT '\n'
+END FOR
+
+WHILE 1
+  X=X+1
+  IF X>20                # IF STATEMENT
+    BREAK                # BREAK
+  ELSE IF X%2            # ELSE IF STATEMENT
+    CONTINUE             # CONTINUE
+  END IF
+  PRINT "%,",X
+END WHILE
+PRINT '\n'
+
+CLASS DOG NAME, AGE      # CLASS EXMPLE
+  SUB BARK WORD          # CLASS FUNCTION
+    FORMAT "$! $!", WORD, WORD
+  END SUB
+END CLASS
+
+DOG CHARLY "CHARLY", 7   # DECLARE DOG OBJECT
+
+FORMAT "DOG'S NAME: $", CHARLY.NAME
+FORMAT "DOG'S AGE:  %", CHARLY.AGE
+CHARLY.BARK "BARK"       # USE DOG OBJECT
